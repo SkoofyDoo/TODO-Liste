@@ -12,9 +12,9 @@
 
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: #804453;" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.materialfx.controller.LoginController">
    <children>
-      <AnchorPane blendMode="SCREEN" depthTest="DISABLE" layoutX="40.0" layoutY="100.0" prefHeight="200.0" prefWidth="510.0" scaleZ="100.0" style="-fx-background-color: #F5F5DC;">
+      <AnchorPane blendMode="SCREEN" depthTest="DISABLE" layoutX="39.0" layoutY="100.0" prefHeight="200.0" prefWidth="510.0" scaleZ="100.0" style="-fx-background-color: #F5F5DC;">
          <children>
-            <MFXPasswordField fx:id="LoginPassword" allowPaste="true" floatMode="DISABLED" hideCharacter="☻" layoutX="152.0" layoutY="135.0" measureUnitGap="10.0" prefHeight="26.0" prefWidth="206.0" promptText="Enter your spellword...">
+            <MFXPasswordField fx:id="LoginPassword" allowPaste="true" floatMode="DISABLED" hideCharacter="☻" layoutX="152.0" layoutY="109.0" measureUnitGap="10.0" prefHeight="26.0" prefWidth="206.0" promptText="Password">
                <textFill>
                   <Color red="0.501960813999176" opacity="0.8700000047683716" />
                </textFill>
@@ -28,17 +28,7 @@
                   <Insets />
                </opaqueInsets>
             </MFXPasswordField>
-            <Label alignment="TOP_CENTER" layoutX="93.0" layoutY="112.0" prefHeight="18.0" prefWidth="235.0" text="Your Spellword" textFill="MAROON">
-               <font>
-                  <Font name="Broadway" size="14.0" />
-               </font>
-            </Label>
-            <MFXTextField fx:id="LoginUserName" floatMode="DISABLED" layoutX="152.0" layoutY="67.0" prefHeight="8.0" prefWidth="206.0" promptText="Enter your name" />
-            <Label alignment="TOP_CENTER" layoutX="80.0" layoutY="44.0" prefHeight="17.0" prefWidth="235.0" text="Your Name" textFill="MAROON">
-               <font>
-                  <Font name="Broadway" size="14.0" />
-               </font>
-            </Label>
+            <MFXTextField fx:id="LoginUserName" floatMode="DISABLED" layoutX="152.0" layoutY="65.0" prefHeight="34.0" prefWidth="206.0" promptText="Username" />
          </children>
       </AnchorPane>
       <MFXButton fx:id="LoginButton" buttonType="RAISED" depthLevel="LEVEL5" layoutX="226.0" layoutY="321.0" prefHeight="34.0" prefWidth="148.0" rippleAnimateShadow="true" rippleColor="#d72f2f" style="-fx-background-color: #F5F5DC;" text="Login" />
@@ -47,6 +37,6 @@
             <Font name="Bodoni MT Condensed" size="96.0" />
          </font>
       </Label>
-      <MFXButton fx:id="LoginSignUpButton" buttonType="RAISED" depthLevel="LEVEL5" layoutX="402.0" layoutY="31.0" prefHeight="34.0" prefWidth="148.0" rippleAnimateShadow="true" rippleColor="#d72f2f" style="-fx-background-color: #F5F5DC;" text="Sign Up" />
+      <MFXButton fx:id="LoginSignUpButton" buttonType="RAISED" depthLevel="LEVEL5" layoutX="445.0" layoutY="31.0" prefHeight="34.0" prefWidth="105.0" rippleAnimateShadow="true" rippleColor="#d72f2f" style="-fx-background-color: #F5F5DC;" text="Sign Up" />
    </children>
 </AnchorPane>

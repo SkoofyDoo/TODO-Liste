@@ -1,6 +1,6 @@
 module org.example.materialfx {
-    requires MaterialFX;
     requires java.sql;
+    requires MaterialFX;
 
 
     opens org.example.materialfx to javafx.fxml;

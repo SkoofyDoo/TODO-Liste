@@ -29,7 +29,7 @@
             </AnchorPane>
             <MFXTextField fx:id="SignUpFirstName" floatMode="DISABLED" layoutX="152.0" layoutY="63.0" prefHeight="8.0" prefWidth="206.0" promptText="First name" text="First Name" />
             <MFXTextField fx:id="SignUpLastName" floatMode="DISABLED" layoutX="152.0" layoutY="103.0" prefHeight="8.0" prefWidth="206.0" promptText="Lastname" text="Last Name" />
-            <MFXTextField fx:id="SignUpUserName" floatMode="DISABLED" layoutX="152.0" layoutY="178.0" prefHeight="8.0" prefWidth="206.0" promptText="Lastname" text="User name" />
+            <MFXTextField fx:id="SignUpUserName" floatMode="DISABLED" layoutX="152.0" layoutY="178.0" prefHeight="8.0" prefWidth="206.0" promptText="Username" text="Username" />
             <MFXCheckbox fx:id="SignUpCheckBoxFemale" layoutX="271.0" layoutY="142.0" prefHeight="26.0" prefWidth="86.0" text="Weiblich" />
             <MFXCheckbox fx:id="SignUpCheckBoxMale" layoutX="152.0" layoutY="142.0" text="Männlich" />
             <MFXPasswordField fx:id="SignUpPassword" floatMode="DISABLED" floatingTextGap="0.0" hideCharacter="♥" layoutX="152.0" layoutY="216.0" prefHeight="26.0" prefWidth="206.0" promptText="Password" />
