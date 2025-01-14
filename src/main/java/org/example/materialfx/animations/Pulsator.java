@@ -6,7 +6,6 @@ import javafx.scene.Node;
 import javafx.util.Duration;
 
 public class Pulsator {
-
     private final ScaleTransition scaleTransition;
 
     public Pulsator(Node node) {

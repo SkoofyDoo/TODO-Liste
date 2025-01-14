@@ -63,7 +63,7 @@ public class SignUpController {
                 Pulsator buttonPulsator = new Pulsator(SignUpBackButton);
                 buttonPulsator.start();
                 System.out.println("Back Button clicked");
-                SignUpButton.getScene().getWindow().hide();
+                SignUpBackButton.getScene().getWindow().hide();
                 FXMLLoader loader = new FXMLLoader(getClass().getResource("/org/example/materialfx/login.fxml"));
 
                 try {

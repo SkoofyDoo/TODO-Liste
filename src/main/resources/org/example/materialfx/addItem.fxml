@@ -11,12 +11,12 @@
    <children>
       <AnchorPane blendMode="SCREEN" depthTest="DISABLE" layoutX="45.0" layoutY="45.0" prefHeight="310.0" prefWidth="510.0" style="-fx-background-color: #F5F5DC;">
          <children>
-            <Label layoutX="141.0" layoutY="155.0" prefHeight="27.0" prefWidth="264.0" text="Bereit für deine erste Heldentat?">
+            <Label fx:id="notTaskLabel" layoutX="141.0" layoutY="155.0" prefHeight="27.0" prefWidth="264.0" text="Bereit für deine erste Heldentat?">
                <font>
                   <Font name="Bernard MT Condensed" size="18.0" />
                </font>
             </Label>
-            <Label alignment="TOP_CENTER" layoutX="123.0" layoutY="94.0" nodeOrientation="LEFT_TO_RIGHT" opacity="0.12" prefHeight="122.0" prefWidth="264.0" text="Steppy" textFill="#b97596">
+            <Label alignment="TOP_CENTER" layoutX="123.0" layoutY="101.0" nodeOrientation="LEFT_TO_RIGHT" opacity="0.12" prefHeight="122.0" prefWidth="264.0" text="Steppy" textFill="#b97596">
                <font>
                   <Font name="Bodoni MT Condensed" size="96.0" />
                </font>
@@ -30,6 +30,6 @@
       </AnchorPane>
       <MFXButton buttonType="RAISED" depthLevel="LEVEL5" layoutX="45.0" layoutY="14.0" rippleColor="MAROON" />
       <MFXButton buttonType="RAISED" depthLevel="LEVEL5" layoutX="107.0" layoutY="14.0" rippleColor="MAROON" />
-      <MFXButton buttonType="RAISED" depthLevel="LEVEL5" layoutX="494.0" layoutY="14.0" rippleColor="MAROON" text="Log Out" />
+      <MFXButton fx:id="LogOutButton" buttonType="RAISED" depthLevel="LEVEL5" layoutX="494.0" layoutY="14.0" rippleColor="MAROON" text="Log Out" />
    </children>
 </AnchorPane>

@@ -22,9 +22,6 @@
                <textFill>
                   <Color red="0.501960813999176" opacity="0.8700000047683716" />
                </textFill>
-               <font>
-                  <Font size="14.0" />
-               </font>
                <cursor>
                   <Cursor fx:constant="DEFAULT" />
                </cursor>
