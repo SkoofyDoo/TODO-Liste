@@ -11,6 +11,7 @@ import javafx.stage.Stage;
 import org.example.materialfx.database.DB_Handler;
 import org.example.materialfx.model.User;
 
+import java.io.IOException;
 import java.net.URL;
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -42,32 +43,39 @@ public class LoginController {
     @FXML
     void initialize() {
 
-        String loginUserNameText = LoginUserName.getText().trim();
-        String loginPasswordText = LoginPassword.getText().trim();
-
-        User user = new User();
-        user.setUsername(loginUserNameText);
-        user.setPassword(loginPasswordText);
+        databaseHandler = new DB_Handler();
 
         LoginButton.setOnAction(event -> {
-            databaseHandler = new DB_Handler();
+
+            String loginUserNameText = LoginUserName.getText().trim();
+            String loginPasswordText = LoginPassword.getText().trim();
+
+            User user = new User();
+            user.setUsername(loginUserNameText);
+            user.setPassword(loginPasswordText);
 
             try {
                 ResultSet result = databaseHandler.getUser(user);
-
-                if (result.next()) {
+                // Null-Prüfung implementiert
+                if (result != null && result.next()) {
                     System.out.println("Login erfolgreich");
                     LoginButton.getScene().getWindow().hide();
+
                     FXMLLoader loader = new FXMLLoader(getClass().getResource("/org/example/materialfx/addItem.fxml"));
+                    loader.load();
+                    Parent root = loader.getRoot();
+
+                    Stage stage = new Stage();
+                    stage.setScene(new javafx.scene.Scene(root));
+                    stage.showAndWait();
+
                 } else {
-                    System.out.println("Login fehlgeschlagen");
+                    System.out.println("Login fehlgeschlagen: Benutzer nicht gefunden oder falsches Passwort.");
                 }
-
-            } catch (SQLException | ClassNotFoundException e) {
+            } catch (SQLException | ClassNotFoundException | IOException e) {
+                System.err.println("Fehler bei der Datenbankabfrage:");
                 e.printStackTrace();
-
             }
-            ;
 
             LoginSignUpButton.setOnAction(event2 -> {
                 // Nach dem Tätigen der Sign Up button, wird das Login fenster ausgeblendet

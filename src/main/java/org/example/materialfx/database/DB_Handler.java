@@ -10,14 +10,14 @@ import java.sql.SQLException;
 import static org.example.materialfx.database.Const.*;
 
 public class DB_Handler extends DBConfig{
-    Connection getDbCconnection;
+    Connection getDbConnection;
 
     public Connection getDbConnection() throws ClassNotFoundException, SQLException {
         String conntectionString = "jdbc:mysql://"+ dbHost +":"+ getPort +"/"+ dbName;
         Class.forName("com.mysql.cj.jdbc.Driver");
-        getDbCconnection = java.sql.DriverManager.getConnection(conntectionString, dbUser, dbPass);
+        getDbConnection = java.sql.DriverManager.getConnection(conntectionString, dbUser, dbPass);
 
-        return getDbCconnection;
+        return getDbConnection;
     }
 
     public void signUpUser(User user) throws SQLException{
@@ -46,11 +46,11 @@ public class DB_Handler extends DBConfig{
 
         ResultSet resultSet = null;
 
-        if (user.getUsername().isEmpty() || user.getPassword().isEmpty()) {
+        if (!user.getUsername().equals("") || !user.getPassword().equals("")) {
 
             // SELECT * FROM users, wo username = "USERS_NAME" und password="USERS_PASSWORT"
-            String query = "SELECT * FROM " + USERS_TABLE + "WHERE " +
-                    USERS_USERNAME + "=? AND " + USERS_PASSWORD + "=?";
+            String query = "SELECT * FROM " + USERS_TABLE + " WHERE " +
+                    USERS_USERNAME + "= ?" + " AND " + USERS_PASSWORD + "=?";
 
             PreparedStatement preparedStatement = getDbConnection().prepareStatement(query);
             preparedStatement.setString(1, user.getUsername());
@@ -62,7 +62,7 @@ public class DB_Handler extends DBConfig{
         } else {
             System.out.println("Bitte Ihre Daten eingeben");
             }
-        
+
         return resultSet;
     }
 }
