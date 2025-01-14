@@ -8,6 +8,8 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.control.Label;
 import javafx.stage.Stage;
+import org.example.materialfx.animations.Pulsator;
+import org.example.materialfx.animations.Shaker;
 import org.example.materialfx.database.DB_Handler;
 import org.example.materialfx.model.User;
 
@@ -58,7 +60,7 @@ public class LoginController {
                 ResultSet result = databaseHandler.getUser(user);
                 // Null-Prüfung implementiert
                 if (result != null && result.next()) {
-                    System.out.println("Login erfolgreich");
+                    System.out.println("Willkommen " + result.getString("firstname"));
                     LoginButton.getScene().getWindow().hide();
 
                     FXMLLoader loader = new FXMLLoader(getClass().getResource("/org/example/materialfx/addItem.fxml"));
@@ -70,6 +72,13 @@ public class LoginController {
                     stage.showAndWait();
 
                 } else {
+                    // shaker für optische Wahrnehmung
+                    Shaker userFieldShaker = new Shaker(LoginUserName);
+                    userFieldShaker.shake();
+
+                    Shaker passFieldShaker = new Shaker(LoginPassword);
+                    passFieldShaker.shake();
+
                     System.out.println("Login fehlgeschlagen: Benutzer nicht gefunden oder falsches Passwort.");
                 }
             } catch (SQLException | ClassNotFoundException | IOException e) {
@@ -96,6 +105,7 @@ public class LoginController {
 
         });
     }
+
 }
 
 

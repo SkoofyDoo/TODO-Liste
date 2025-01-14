@@ -83,8 +83,8 @@ public class SignUpController {
 
         String gender;
         if(SignUpCheckBoxMale.isSelected()) {
-            gender = "Male";
-        } else gender = "Female";
+            gender = "Männlich";
+        } else gender = "Weiblich";
 
         User user = new User(name, lastname, username, password, gender);
 
