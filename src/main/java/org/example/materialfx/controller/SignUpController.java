@@ -5,7 +5,11 @@ import io.github.palexdev.materialfx.controls.MFXCheckbox;
 import io.github.palexdev.materialfx.controls.MFXPasswordField;
 import io.github.palexdev.materialfx.controls.MFXTextField;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Parent;
+import javafx.stage.Stage;
 import org.example.materialfx.database.DB_Handler;
+import org.example.materialfx.model.User;
 
 import java.net.URL;
 import java.sql.DatabaseMetaData;
@@ -49,20 +53,50 @@ public class SignUpController {
     @FXML
     void initialize() {
 
-            DB_Handler databaseHandler = new DB_Handler();
-
-
             SignUpButton.setOnAction(event -> {
+                createUser();
+
+                SignUpButton.getScene().getWindow().hide();
+                FXMLLoader loader = new FXMLLoader(getClass().getResource("/org/example/materialfx/login.fxml"));
+
                 try {
-                    databaseHandler.signUpUser(SignUpFirstName.getText(), SignUpLastName.getText(),
-                            SignUpUserName.getText(),
-                            SignUpPassword.getText(),
-                            "Männlich");
-                } catch (SQLException e) {
-                    throw new RuntimeException(e);
+                    loader.load();
+                } catch (Exception e) {
+                    e.printStackTrace();
                 }
+
+                Parent root = loader.getRoot();
+                Stage stage = new Stage();
+                stage.setScene(new javafx.scene.Scene(root));
+                stage.showAndWait();
             });
-        };
+    };
+
+    private void createUser() {
+
+        DB_Handler databaseHandler = new DB_Handler();
+
+        String name = SignUpFirstName.getText();
+        String lastname = SignUpLastName.getText();
+        String username = SignUpUserName.getText();
+        String password = SignUpPassword.getText();
+
+        String gender;
+        if(SignUpCheckBoxMale.isSelected()) {
+            gender = "Male";
+        } else gender = "Female";
+
+        User user = new User(name, lastname, username, password, gender);
+
+        try {
+            databaseHandler.signUpUser(user);
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
+
 
     }
+
+}
+
 

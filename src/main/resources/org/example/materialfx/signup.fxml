@@ -8,7 +8,6 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-
 <AnchorPane prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: #804453;" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.materialfx.controller.SignUpController">
    <children>
       <AnchorPane blendMode="SCREEN" depthTest="DISABLE" layoutX="44.0" layoutY="45.0" prefHeight="310.0" prefWidth="510.0" style="-fx-background-color: #F5F5DC;">
@@ -27,9 +26,9 @@
                   </Label>
                </children>
             </AnchorPane>
-            <MFXTextField fx:id="SignUpFirstName" floatMode="DISABLED" layoutX="152.0" layoutY="63.0" prefHeight="8.0" prefWidth="206.0" promptText="First name" text="First Name" />
-            <MFXTextField fx:id="SignUpLastName" floatMode="DISABLED" layoutX="152.0" layoutY="103.0" prefHeight="8.0" prefWidth="206.0" promptText="Lastname" text="Last Name" />
-            <MFXTextField fx:id="SignUpUserName" floatMode="DISABLED" layoutX="152.0" layoutY="178.0" prefHeight="8.0" prefWidth="206.0" promptText="Username" text="Username" />
+            <MFXTextField fx:id="SignUpFirstName" floatMode="DISABLED" layoutX="152.0" layoutY="63.0" prefHeight="8.0" prefWidth="206.0" promptText="First name" />
+            <MFXTextField fx:id="SignUpLastName" floatMode="DISABLED" layoutX="152.0" layoutY="103.0" prefHeight="8.0" prefWidth="206.0" promptText="Lastname" />
+            <MFXTextField fx:id="SignUpUserName" floatMode="DISABLED" layoutX="152.0" layoutY="178.0" prefHeight="8.0" prefWidth="206.0" promptText="Username" />
             <MFXCheckbox fx:id="SignUpCheckBoxFemale" layoutX="271.0" layoutY="142.0" prefHeight="26.0" prefWidth="86.0" text="Weiblich" />
             <MFXCheckbox fx:id="SignUpCheckBoxMale" layoutX="152.0" layoutY="142.0" text="Männlich" />
             <MFXPasswordField fx:id="SignUpPassword" floatMode="DISABLED" floatingTextGap="0.0" hideCharacter="♥" layoutX="152.0" layoutY="216.0" prefHeight="26.0" prefWidth="206.0" promptText="Password" />

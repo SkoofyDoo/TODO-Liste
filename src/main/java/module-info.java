@@ -1,6 +1,7 @@
 module org.example.materialfx {
     requires java.sql;
     requires MaterialFX;
+    requires mysql.connector.j;
 
 
     opens org.example.materialfx to javafx.fxml;
