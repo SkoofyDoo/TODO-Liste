@@ -86,24 +86,26 @@ public class LoginController {
                 e.printStackTrace();
             }
 
-            LoginSignUpButton.setOnAction(event2 -> {
-                // Nach dem Tätigen der Sign Up button, wird das Login fenster ausgeblendet
-                LoginSignUpButton.getScene().getWindow().hide();
-                FXMLLoader loader = new FXMLLoader(getClass().getResource("/org/example/materialfx/signup.fxml"));
-
-                try {
-                    loader.load();
-                } catch (Exception e) {
-                    e.printStackTrace();
-                }
-
-                Parent root = loader.getRoot();
-                Stage stage = new Stage();
-                stage.setScene(new javafx.scene.Scene(root));
-                stage.showAndWait();
-            });
 
         });
+
+        LoginSignUpButton.setOnAction(event -> {
+            // Nach dem Tätigen der Sign Up button, wird das Login fenster ausgeblendet
+            LoginSignUpButton.getScene().getWindow().hide();
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/org/example/materialfx/signup.fxml"));
+
+            try {
+                loader.load();
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+
+            Parent root = loader.getRoot();
+            Stage stage = new Stage();
+            stage.setScene(new javafx.scene.Scene(root));
+            stage.showAndWait();
+        });
+
     }
 
 }

@@ -12,8 +12,12 @@
 
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: #804453;" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.materialfx.controller.LoginController">
    <children>
-      <AnchorPane blendMode="SCREEN" depthTest="DISABLE" layoutX="39.0" layoutY="100.0" prefHeight="200.0" prefWidth="510.0" scaleZ="100.0" style="-fx-background-color: #F5F5DC;">
+      <AnchorPane blendMode="SCREEN" depthTest="ENABLE" layoutX="39.0" layoutY="100.0" prefHeight="200.0" prefWidth="510.0" scaleZ="100.0" style="-fx-background-color: #F5F5DC;">
          <children>
+            <MFXTextField fx:id="LoginUserName" floatMode="DISABLED" layoutX="152.0" layoutY="62.0" prefHeight="37.0" prefWidth="206.0" promptText="Username">
+               <font>
+                  <Font name="Bookman Old Style" size="12.0" />
+               </font></MFXTextField>
             <MFXPasswordField fx:id="LoginPassword" allowPaste="true" floatMode="DISABLED" hideCharacter="☻" layoutX="152.0" layoutY="109.0" measureUnitGap="10.0" prefHeight="26.0" prefWidth="206.0" promptText="Password">
                <textFill>
                   <Color red="0.501960813999176" opacity="0.8700000047683716" />
@@ -28,8 +32,10 @@
                   <Insets />
                </opaqueInsets>
             </MFXPasswordField>
-            <MFXTextField fx:id="LoginUserName" floatMode="DISABLED" layoutX="152.0" layoutY="65.0" prefHeight="34.0" prefWidth="206.0" promptText="Username" />
          </children>
+         <opaqueInsets>
+            <Insets />
+         </opaqueInsets>
       </AnchorPane>
       <MFXButton fx:id="LoginButton" buttonType="RAISED" depthLevel="LEVEL5" layoutX="226.0" layoutY="321.0" prefHeight="34.0" prefWidth="148.0" rippleAnimateShadow="true" rippleColor="#d72f2f" style="-fx-background-color: #F5F5DC;" text="Login" />
       <Label alignment="TOP_CENTER" layoutX="169.0" layoutY="31.0" prefHeight="116.0" prefWidth="262.0" text="Steppy" textFill="#b97596">
