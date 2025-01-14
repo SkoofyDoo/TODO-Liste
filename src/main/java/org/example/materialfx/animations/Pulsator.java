@@ -9,12 +9,12 @@ public class Pulsator {
     private final ScaleTransition scaleTransition;
 
     public Pulsator(Node node) {
-        this.scaleTransition = new ScaleTransition(Duration.millis(500), node);
+        this.scaleTransition = new ScaleTransition(Duration.millis(200), node);
         scaleTransition.setFromX(1.0);
         scaleTransition.setFromY(1.0);
-        scaleTransition.setToX(1.2); // Увеличение размера
-        scaleTransition.setToY(1.2);
-        scaleTransition.setCycleCount(2); // Бесконечная анимация
+        scaleTransition.setToX(1.5);
+        scaleTransition.setToY(1.5);
+        scaleTransition.setCycleCount(2);
         scaleTransition.setAutoReverse(true);
     }
 

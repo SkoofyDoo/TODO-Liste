@@ -28,8 +28,7 @@
             </ImageView>
          </children>
       </AnchorPane>
-      <MFXButton buttonType="RAISED" depthLevel="LEVEL5" layoutX="45.0" layoutY="14.0" rippleColor="MAROON" />
-      <MFXButton buttonType="RAISED" depthLevel="LEVEL5" layoutX="107.0" layoutY="14.0" rippleColor="MAROON" />
-      <MFXButton fx:id="LogOutButton" buttonType="RAISED" depthLevel="LEVEL5" layoutX="494.0" layoutY="14.0" rippleColor="MAROON" text="Log Out" />
+      <MFXButton fx:id="AddFormAddButton" buttonType="RAISED" depthLevel="LEVEL5" layoutX="423.0" layoutY="14.0" prefHeight="18.0" prefWidth="132.0" rippleAnimateShadow="true" rippleColor="#d72f2f" style="-fx-background-color: #F5F5DC;" text="Log Out" />
+      <MFXButton fx:id="AddFormAddButton1" buttonType="RAISED" depthLevel="LEVEL5" layoutX="423.0" layoutY="360.0" prefHeight="18.0" prefWidth="132.0" rippleAnimateShadow="true" rippleColor="#d72f2f" style="-fx-background-color: #F5F5DC;" text="Selected Done" />
    </children>
 </AnchorPane>
