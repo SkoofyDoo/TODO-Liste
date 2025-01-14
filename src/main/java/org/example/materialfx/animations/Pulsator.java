@@ -6,6 +6,7 @@ import javafx.scene.Node;
 import javafx.util.Duration;
 
 public class Pulsator {
+
     private final ScaleTransition scaleTransition;
 
     public Pulsator(Node node) {
@@ -14,7 +15,7 @@ public class Pulsator {
         scaleTransition.setFromY(1.0);
         scaleTransition.setToX(1.2); // Увеличение размера
         scaleTransition.setToY(1.2);
-        scaleTransition.setCycleCount(Animation.INDEFINITE); // Бесконечная анимация
+        scaleTransition.setCycleCount(2); // Бесконечная анимация
         scaleTransition.setAutoReverse(true);
     }
 

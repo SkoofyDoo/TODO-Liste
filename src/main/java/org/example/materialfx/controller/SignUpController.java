@@ -7,7 +7,9 @@ import io.github.palexdev.materialfx.controls.MFXTextField;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
+import javafx.scene.image.ImageView;
 import javafx.stage.Stage;
+import org.example.materialfx.animations.Pulsator;
 import org.example.materialfx.database.DB_Handler;
 import org.example.materialfx.model.User;
 
@@ -32,6 +34,9 @@ public class SignUpController {
     private MFXButton SignUpButton;
 
     @FXML
+    private ImageView SignUpBackButton;
+
+    @FXML
     private MFXCheckbox SignUpCheckBoxFemale;
 
 
@@ -53,6 +58,27 @@ public class SignUpController {
     @FXML
     void initialize() {
 
+            SignUpBackButton.setOnMouseClicked(event -> {
+
+                Pulsator buttonPulsator = new Pulsator(SignUpBackButton);
+                buttonPulsator.start();
+                System.out.println("Back Button clicked");
+                SignUpButton.getScene().getWindow().hide();
+                FXMLLoader loader = new FXMLLoader(getClass().getResource("/org/example/materialfx/login.fxml"));
+
+                try {
+                    loader.load();
+                } catch (Exception e) {
+                    e.printStackTrace();
+                }
+
+                Parent root = loader.getRoot();
+                Stage stage = new Stage();
+                stage.setScene(new javafx.scene.Scene(root));
+                stage.show();
+            });
+
+
             SignUpButton.setOnAction(event -> {
                 createUser();
 
@@ -70,6 +96,7 @@ public class SignUpController {
                 stage.setScene(new javafx.scene.Scene(root));
                 stage.show();
             });
+
     };
 
     private void createUser() {

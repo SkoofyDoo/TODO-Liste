@@ -4,7 +4,10 @@
 <?import io.github.palexdev.materialfx.controls.MFXCheckbox?>
 <?import io.github.palexdev.materialfx.controls.MFXPasswordField?>
 <?import io.github.palexdev.materialfx.controls.MFXTextField?>
+<?import javafx.scene.Cursor?>
 <?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
@@ -24,6 +27,14 @@
                         <Font name="Bodoni MT Condensed" size="36.0" />
                      </font>
                   </Label>
+                  <ImageView fx:id="SignUpBackButton" fitHeight="26.0" fitWidth="34.0" layoutX="8.0" layoutY="8.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../../assets/back.png" />
+                     </image>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </ImageView>
                </children>
             </AnchorPane>
             <MFXTextField fx:id="SignUpFirstName" floatMode="DISABLED" layoutX="152.0" layoutY="63.0" prefHeight="8.0" prefWidth="206.0" promptText="First name" />

@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import io.github.palexdev.materialfx.controls.MFXButton?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
-
 
 <AnchorPane prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: #804453;" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.materialfx.controller.AddItemController">
    <children>
@@ -28,5 +28,8 @@
             </ImageView>
          </children>
       </AnchorPane>
+      <MFXButton buttonType="RAISED" depthLevel="LEVEL5" layoutX="45.0" layoutY="14.0" rippleColor="MAROON" />
+      <MFXButton buttonType="RAISED" depthLevel="LEVEL5" layoutX="107.0" layoutY="14.0" rippleColor="MAROON" />
+      <MFXButton buttonType="RAISED" depthLevel="LEVEL5" layoutX="494.0" layoutY="14.0" rippleColor="MAROON" text="Log Out" />
    </children>
 </AnchorPane>
