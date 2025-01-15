@@ -7,18 +7,13 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: #804453;" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.materialfx.controller.AddItemController">
+<AnchorPane fx:id="" prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: #804453;" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.materialfx.controller.AddItemController">
    <children>
       <AnchorPane blendMode="SCREEN" depthTest="DISABLE" layoutX="45.0" layoutY="45.0" prefHeight="310.0" prefWidth="510.0" style="-fx-background-color: #F5F5DC;">
          <children>
-            <Label fx:id="notTaskLabel" layoutX="141.0" layoutY="155.0" prefHeight="27.0" prefWidth="264.0" text="Bereit für deine erste Heldentat?">
+            <Label fx:id="notTaskLabel" layoutX="141.0" layoutY="155.0" prefHeight="27.0" prefWidth="264.0" text="Bereit für deine neue Heldentat?">
                <font>
                   <Font name="Bernard MT Condensed" size="18.0" />
-               </font>
-            </Label>
-            <Label alignment="TOP_CENTER" layoutX="123.0" layoutY="101.0" nodeOrientation="LEFT_TO_RIGHT" opacity="0.12" prefHeight="122.0" prefWidth="264.0" text="Steppy" textFill="#b97596">
-               <font>
-                  <Font name="Bodoni MT Condensed" size="96.0" />
                </font>
             </Label>
             <ImageView fx:id="AddButton" fitHeight="46.0" fitWidth="38.0" layoutX="236.0" layoutY="216.0" pickOnBounds="true" preserveRatio="true">
@@ -26,6 +21,11 @@
                   <Image url="@../../../assets/free-icon-add-6364339.png" />
                </image>
             </ImageView>
+            <Label alignment="TOP_CENTER" layoutX="123.0" layoutY="107.0" nodeOrientation="LEFT_TO_RIGHT" opacity="0.12" prefHeight="122.0" prefWidth="264.0" text="Steppy" textFill="#b97596">
+               <font>
+                  <Font name="Bodoni MT Condensed" size="96.0" />
+               </font>
+            </Label>
          </children>
       </AnchorPane>
       <MFXButton fx:id="AddFormAddButton" buttonType="RAISED" depthLevel="LEVEL5" layoutX="423.0" layoutY="14.0" prefHeight="18.0" prefWidth="132.0" rippleAnimateShadow="true" rippleColor="#d72f2f" style="-fx-background-color: #F5F5DC;" text="Log Out" />

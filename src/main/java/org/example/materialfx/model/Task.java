@@ -1,21 +1,39 @@
 package org.example.materialfx.model;
 
+import java.sql.Date;
+
 public class Task {
+
+    private Date dateCreated;
+    private String task;
+    private String taskDescription;
+    private int userid;
 
     public Task() {
     }
 
-    public Task(long dateCreated, String taskDescription, String task) {
-        this.dateCreated = dateCreated;
-        this.taskDescription = taskDescription;
+
+    public Task(int userid, String task, String taskDescription, Date dateCreated) {
+
         this.task = task;
+        this.userid = userid;
+        this.taskDescription = taskDescription;
+        this.dateCreated = dateCreated;
+    }
+    public int getUserid() {
+        return userid;
     }
 
-    public long getDateCreated() {
+    public void setUserid(int userid) {
+        this.userid = userid;
+    }
+
+
+    public Date getDateCreated() {
         return dateCreated;
     }
 
-    public void setDateCreated(long dateCreated) {
+    public void setDateCreated(Date dateCreated) {
         this.dateCreated = dateCreated;
     }
 
@@ -35,9 +53,7 @@ public class Task {
         this.task = task;
     }
 
-    private long dateCreated;
-    private String taskDescription;
-    private String task;
+
 
 
 }

@@ -1,5 +1,6 @@
 package org.example.materialfx.controller;
 
+import io.github.palexdev.materialfx.controls.MFXButton;
 import javafx.animation.FadeTransition;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -16,6 +17,7 @@ import org.example.materialfx.animations.Shaker;
 import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
+import java.util.function.ToDoubleBiFunction;
 
 public class AddItemController {
 
@@ -24,20 +26,34 @@ public class AddItemController {
     }
 
     @FXML
-    private ResourceBundle resources;
-
-    @FXML
-    private URL location;
-
-    @FXML
     private ImageView AddButton;
 
     @FXML
     private Label notTaskLabel;
 
+    @FXML
+    private MFXButton logOutButton;
 
+    
     @FXML
     void initialize() {
+
+
+
+//        logOutButton.setOnMouseClicked(event -> {
+//           logOutButton.getScene().getWindow().hide();
+//           FXMLLoader loader = new FXMLLoader(getClass().getResource("/org/example/materialfx/login.fxml"));
+//           try {
+//               loader.load();
+//           } catch (IOException e) {
+//               throw new RuntimeException(e);
+//           }
+//           Parent root = loader.getRoot();
+//           Stage stage = new Stage();
+//           stage.setScene(new Scene(root));
+//           stage.show();
+//        });
+
 
         AddButton.setOnMouseClicked(event -> {
             Pulsator buttonPulsator = new Pulsator(AddButton);
