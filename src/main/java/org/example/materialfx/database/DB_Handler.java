@@ -98,35 +98,18 @@ public class DB_Handler extends DBConfig {
     }
 
     public int getCurrentUserId() {
-        int userId = -1; // Standardwert, falls kein Benutzer gefunden wird
-//        String query = "SELECT " + USERS_ID + " FROM " + USERS_TABLE + " WHERE " + USERS_USERNAME + " = ?";
-//
-//
-//        try {
-//
-//            PreparedStatement preparedStatement = getDbConnection().prepareStatement(query);
-//            preparedStatement.setInt(1, userid);
-//            ResultSet resultSet = preparedStatement.executeQuery();
-//
-//            if (resultSet.next()) {
-//                userId = resultSet.getInt(USERS_ID);
-//            }
-//        } catch (ClassNotFoundException | SQLException e) {
-//            e.printStackTrace();
-//        }
-//
-//        return userId;
+        int userId = -1;
 
-        List<Integer> userIds = new ArrayList<>(); // Список для хранения userId
-        String query = "SELECT " + USERS_ID + " FROM " + USERS_TABLE; // Запрос для получения всех userId
+        List<Integer> userIds = new ArrayList<>();
+        String query = "SELECT " + USERS_ID + " FROM " + USERS_TABLE;
 
         try {
             PreparedStatement preparedStatement = getDbConnection().prepareStatement(query);
             ResultSet resultSet = preparedStatement.executeQuery();
 
-            while (resultSet.next()) { // Цикл для чтения всех userId
+            while (resultSet.next()) {
                 userId = resultSet.getInt(USERS_ID);
-                userIds.add(userId); // Сохранение userId в списке
+                userIds.add(userId);
             }
         } catch (ClassNotFoundException | SQLException e) {
             e.printStackTrace();
