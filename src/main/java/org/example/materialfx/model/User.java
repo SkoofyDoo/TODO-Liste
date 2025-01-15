@@ -2,6 +2,13 @@ package org.example.materialfx.model;
 
 public class User {
 
+    private String firstname;
+    private String lastname;
+    private String username;
+    private String password;
+    private String gender;
+    private int userid;
+
     public User() {
     }
 
@@ -11,6 +18,10 @@ public class User {
         this.username = username;
         this.lastname = lastname;
         this.firstname = firstname;
+    }
+
+    public User(int userid){
+        this.userid = userid;
     }
 
     public String getFirstname() {
@@ -52,11 +63,5 @@ public class User {
     public void setGender(String gender) {
         this.gender = gender;
     }
-
-    private String firstname;
-    private String lastname;
-    private String username;
-    private String password;
-    private String gender;
 
 }
