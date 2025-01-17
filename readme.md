@@ -1,5 +1,5 @@
 # MyProject TODO List
-## Version: 0.1
+## Version: 0.3
 
 
 ## Beschreibung:   
@@ -9,12 +9,21 @@
 ## Feature´s / Plan:
 
 ## muss
-* TODO´s speichern
-* TODO´s löschen
-* alle anzeigen
+* Sign Up User
+* Log In User
+* Userdaten in der DB speichern
+* TODO´s speichern in DB speichern
+* TODO´s anzeigen (noch nicht geschafft)
+* TODO´s löschen (noch nicht geschafft)
+* alle anzeigen (noch nicht geschafft)
 ## kann
 * suchen
 * exportieren
 * update
 
 ## Umgesetzt
+
+Sign Up User
+* Log In User
+* Userdaten in der DB speichern
+* TODO´s speichern in DB speichern
