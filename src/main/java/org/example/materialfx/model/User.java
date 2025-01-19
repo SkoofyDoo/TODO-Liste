@@ -7,21 +7,27 @@ public class User {
     private String username;
     private String password;
     private String gender;
-    private int userid;
+    private int userID;
 
     public User() {
     }
 
-    public User(String firstname, String lastname, String username, String password, String gender) {
+    public User( String firstname, String lastname, String username, String password, String gender) {
         this.gender = gender;
         this.password = password;
         this.username = username;
         this.lastname = lastname;
         this.firstname = firstname;
+
     }
 
-    public User(int userid){
-        this.userid = userid;
+
+    public int getUserID() {
+        return userID;
+    }
+
+    public int setUserID(String currentUserID) {
+     return userID;
     }
 
     public String getFirstname() {

@@ -1,39 +1,45 @@
 package org.example.materialfx.model;
 
 import java.sql.Date;
+import java.sql.Timestamp;
+import java.time.LocalDate;
 
 public class Task {
 
-    private Date dateCreated;
+    private int userID;
+    private Timestamp dateCreated;
     private String task;
     private String taskDescription;
-    private int userid;
+
+
+    public int getUserID() {
+        return userID;
+    }
+
+    public void setUserID(int userID) {
+        this.userID = userID;
+    }
 
     public Task() {
     }
 
 
-    public Task(int userid, String task, String taskDescription, Date dateCreated) {
+    public Task(int userID, String task, String taskDescription, Timestamp dateCreated) {
 
+        this.userID = userID;
         this.task = task;
-        this.userid = userid;
+
         this.taskDescription = taskDescription;
         this.dateCreated = dateCreated;
     }
-    public int getUserid() {
-        return userid;
-    }
-
-    public void setUserid(int userid) {
-        this.userid = userid;
-    }
 
 
-    public Date getDateCreated() {
+
+    public Timestamp getDateCreated() {
         return dateCreated;
     }
 
-    public void setDateCreated(Date dateCreated) {
+    public void setDateCreated(Timestamp dateCreated) {
         this.dateCreated = dateCreated;
     }
 

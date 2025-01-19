@@ -14,7 +14,7 @@ import org.example.materialfx.database.DB_Handler;
 import org.example.materialfx.model.User;
 
 import java.net.URL;
-import java.sql.DatabaseMetaData;
+
 import java.sql.SQLException;
 import java.util.ResourceBundle;
 

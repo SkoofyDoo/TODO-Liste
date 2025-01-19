@@ -3,12 +3,8 @@ package org.example.materialfx.database;
 import org.example.materialfx.model.Task;
 import org.example.materialfx.model.User;
 
-import java.sql.Connection;
-import java.sql.PreparedStatement;
-import java.sql.ResultSet;
-import java.sql.SQLException;
-import java.util.ArrayList;
-import java.util.List;
+import java.sql.*;
+
 
 import static org.example.materialfx.database.Const.*;
 
@@ -47,26 +43,26 @@ public class DB_Handler extends DBConfig {
 
 
     public void addTask(Task task) throws SQLException {
-        String insert = "INSERT INTO " + TASKS_TABLE + "(" + TASKS_NAME + "," + TASKS_USERID + "," + TASKS_DESCRIPTION + ", "
-                + TASKS_DATE + ")" + "VALUES(?,?,?,?)";
+        String insert = "INSERT INTO " + TASKS_TABLE + "(" + TASKS_USERID + "," + TASKS_TASK + "," + TASKS_DATE + ", "
+                + TASKS_DESCRIPTION + ")" + "VALUES(?,?,?,?)";
 
         try {
             PreparedStatement preparedStatement = getDbConnection().prepareStatement(insert);
 
+            preparedStatement.setInt(1, task.getUserID());
+            preparedStatement.setString(2, task.getTask());
+            preparedStatement.setTimestamp (3, task.getDateCreated());
+            preparedStatement.setString(4, task.getTaskDescription());
 
-            preparedStatement.setString(1, task.getTask());
-            preparedStatement.setInt(2, task.getUserid());
-            preparedStatement.setString(3, task.getTaskDescription());
-            preparedStatement.setDate(4, task.getDateCreated());
 
             preparedStatement.executeUpdate();
 
-            System.out.println(String.format("Task %s added to user %s", task.getTask(), task.getUserid()));
+            System.out.println(String.format("Task %s added to user %s", task.getTask(), task.getUserID()));
 
         } catch (ClassNotFoundException e) {
             throw new RuntimeException(e);
         }
-        getCurrentUserId();
+
     }
 
 
@@ -82,8 +78,6 @@ public class DB_Handler extends DBConfig {
                     USERS_USERNAME + "= ?" + " AND " + USERS_PASSWORD + "=?";
 
 
-            //String id = "ALTER TABLE " + TASKS_TABLE + " ADD CONSTRAINT " + TASKS_USERID + " FOREIGN KEY" + USERS_ID + "REFERENCES" +  USERS_ID;
-
             PreparedStatement preparedStatement = getDbConnection().prepareStatement(query);
             preparedStatement.setString(1, user.getUsername());
             preparedStatement.setString(2, user.getPassword());
@@ -93,30 +87,6 @@ public class DB_Handler extends DBConfig {
         } else {
             System.out.println("Bitte Ihre Daten eingeben");
         }
-
         return resultSet;
     }
-
-    public int getCurrentUserId() {
-        int userId = -1;
-
-        List<Integer> userIds = new ArrayList<>();
-        String query = "SELECT " + USERS_ID + " FROM " + USERS_TABLE;
-
-        try {
-            PreparedStatement preparedStatement = getDbConnection().prepareStatement(query);
-            ResultSet resultSet = preparedStatement.executeQuery();
-
-            while (resultSet.next()) {
-                userId = resultSet.getInt(USERS_ID);
-                userIds.add(userId);
-            }
-        } catch (ClassNotFoundException | SQLException e) {
-            e.printStackTrace();
-        }
-        return userId;
-
-    }
-
-
 }

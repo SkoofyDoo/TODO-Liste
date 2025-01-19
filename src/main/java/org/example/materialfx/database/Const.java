@@ -1,7 +1,5 @@
 package org.example.materialfx.database;
 
-import java.util.Date;
-
 public class Const {
 
     public static final String USERS_TABLE= "users";
@@ -20,7 +18,7 @@ public class Const {
 
     public static final String TASKS_ID = "taskid";
     public static final String TASKS_USERID = "userid";
-    public static final String TASKS_NAME = "task";
+    public static final String TASKS_TASK = "task";
     public static final String TASKS_DATE = "datecreated";
     public static final String TASKS_DESCRIPTION= "description";
 }
